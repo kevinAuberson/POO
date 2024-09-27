@@ -1,0 +1,93 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>122</x><y>312</y><w>252</w><h>54</h></coordinates><panel_attributes>FederationNationale
+--
+- nom : String
+--
++ getEvenement() : list&lt;EvenementSportif&gt;
++ inscription(list&lt;juge&gt;, list&lt;gymnaste&gt;, EvenementSportif) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>84</y><w>102</w><h>60</h></coordinates><panel_attributes>Personne
+--
+- nom : String
+- prenom : String
+- dateNaissance : Date
+- numeroTelephone : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>186</y><w>210</w><h>78</h></coordinates><panel_attributes>Gymnaste
+--
+- genre : char
+- poids : double
+- taille : double
+--
++ getParticipationCategorie(categorie Categorie) : void
++ getNbrVictoires(categorie Categorie) : int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>198</y><w>96</w><h>18</h></coordinates><panel_attributes>Juge
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>338</x><y>138</y><w>102</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;150;40;150;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>626</x><y>432</y><w>102</w><h>42</h></coordinates><panel_attributes>Disipline
+--
+- nom : String
+- genreGymnaste : char
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>308</x><y>432</y><w>126</w><h>36</h></coordinates><panel_attributes>Categorie
+--
+- nom : String
+- maxGymnaste : int
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>308</x><y>498</y><w>84</w><h>36</h></coordinates><panel_attributes>CI : maximum 16 
+gymnastes inscrit 
+par catégories
+bg=blue
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>626</x><y>312</y><w>186</w><h>54</h></coordinates><panel_attributes>EvenementSportif
+--
+- nom : String
+- date : Date
+--
++ getPodium(categorie Categorie) : list&lt;Gymnaste&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>566</x><y>498</y><w>120</w><h>36</h></coordinates><panel_attributes>CI : pour chaque discipline
+présente toutes les catégories
+le sont également.
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>668</x><y>360</y><w>54</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+m2=1
+contient v</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>428</x><y>450</y><w>210</w><h>30</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m1=1..*
+m2=1
+&lt; contient</panel_attributes><additional_attributes>10;20;330;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>128</x><y>432</y><w>84</w><h>30</h></coordinates><panel_attributes>Participation
+--
+- note : double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>158</x><y>258</y><w>60</w><h>66</h></coordinates><panel_attributes>lt=-&gt;
+m1=1..*
+m2=1
+appartient v</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>356</x><y>210</y><w>84</w><h>114</h></coordinates><panel_attributes>lt=-&gt;
+m1=1..*
+m2=1
+appartient v</panel_attributes><additional_attributes>100;10;100;110;10;110;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>434</x><y>312</y><w>126</w><h>30</h></coordinates><panel_attributes>Inscription
+--
+- dateInscription : Date</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>416</x><y>492</y><w>138</w><h>66</h></coordinates><panel_attributes>Une fédération ne peut
+pas s'inscrire à 
+plusieurs évenement 
+à la même date si ces évenements
+on la même catégorie ou la même 
+discipline
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>306</y><w>78</w><h>30</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+fait &gt;</panel_attributes><additional_attributes>10;20;110;20</additional_attributes></element><element><id>Relation</id><coordinates><x>554</x><y>306</y><w>84</w><h>30</h></coordinates><panel_attributes>lt=-
+m1=1..*
+m2=1..*
+&lt; génère</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>Relation</id><coordinates><x>104</x><y>258</y><w>54</w><h>204</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..1
+
+
+
+
+
+
+
+
+
+
+participe v</panel_attributes><additional_attributes>10;10;10;310;40;310</additional_attributes></element><element><id>Relation</id><coordinates><x>206</x><y>432</y><w>114</w><h>30</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1..*
+participe &gt;</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>164</x><y>156</y><w>192</w><h>42</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;50;10;10;300;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>110</x><y>498</y><w>174</w><h>36</h></coordinates><panel_attributes>0..1 car si un gymnaste tombe 
+par exemple malade alors il sera 
+tout de même inscrit mais ne participera pas.
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element></diagram>
